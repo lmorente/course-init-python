@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Listado de artículos
+{% endblock %}
+
+{% block content %}
+<!--{{block.super}}-->
+    <h1 class="title">Listado de artículos:</h1>
+
+        {% for article in articles %}
+        <article class="article-item">
+            {% if article.images != null and article.images.url|length >= 12 %}
+                <div class="image">
+                    <img src="{{article.images.url}}"/>
+                </div>
+            {% endif %}
+                <div class="data">
+                    <h2>{{article.title}}</h2>
+                    <span class="date">{{article.created_at}}</span>
+                    <p>
+                        {{article.content}}
+
+                        <a class="btn btn-delete" href="{% url 'delete_article' article.id%}">Eliminar</a>
+                    </p>
+                </div>
+            <div class="clearfix"></div>
+        </article>
+        {%endfor%}
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block content %}
+    <!-- Comentario plantillas django-->
+    {% comment  'Nota de usuario' %}
+    {% endcomment %}
+
+    <h1 class="title">Inicio</h1>
+    <p>{{variable}}</p>
+
+    {% if name %}
+        <p>{{name}}</p>
+    {% else %}
+        <strong>El nombre no existe</strong>
+    {% endif %}
+
+    <h3>Lenguajes de programación</h3>
+    <ul>
+        {% for language in languages %}
+            <li>{{language}} {{forloop.counter0}} {{forloop.revcounter0}} {{forloop.first}} {{forloop.last}}</li>
+            {% empty %}
+            <p>No hay lenguajes que mostrar</p>
+
+        {% endfor %}
+    </ul>
+
+    <h3>Años pares hasta el 2050: </h3>
+        <ul>
+            {% for year in years %}
+                {% if year|divisibleby:2 == True %}
+                    <li>{{year}}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+    {% include 'current_data.html'%}
+
+
+{% endblock %}
+
+</body>
+</html>

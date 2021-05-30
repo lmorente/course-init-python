@@ -1,0 +1,3 @@
+import module_hello_world
+
+module_hello_world.hello_world()

@@ -1,0 +1,23 @@
+#Crear un nuevo proyecto
+django-admin startproject {nombre}
+
+#Migrar proyecto (dir del proyecto)
+python manage.py migrate
+
+#Ejectura el proyectotes
+python manage.py runserver
+
+#Crear/iniciar una app en un proyecto
+python manage.py startapp {my_app}
+
+#Ejecutar migraciones de los modelos creados o modificados
+python manage.py makemigrations
+
+#generar comandos de migración
+python manage.py sqlmigrate {my_app} {migration_number}
+
+#ejecutar migración en BBDD
+python manage.py
+
+#Crear un usuario para el panel admin
+python manage.py createsuperuser

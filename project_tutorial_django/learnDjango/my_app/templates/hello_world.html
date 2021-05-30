@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% load filters %}
+
+{% block title %}
+    Hello World
+{% endblock %}
+
+{% block content %}
+<!--{{block.super}}-->
+    <h1 class="title">Hello world!</h1>
+    <h3>{{ "By, Lourdes"|cut:"," }}</h3>
+    <p>{{ text|default:"no hay  texto" }}</p>
+    <p>{{ list|first }}</p>
+    <p>{{ list|last }}</p>
+    <p>{{ list|join:', '}}</p>
+    <p>{{ list|length}}</p>
+
+    {{ "Lourdes Morente"|regard|safe}}
+{% endblock %}

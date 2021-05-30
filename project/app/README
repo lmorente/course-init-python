@@ -1,0 +1,2 @@
+Para ejecutar la aplicación es necesario tener una BBDD tipo MySQL en local,
+una vez realizada la conexión ejecutar en una consola MySQL el fichero database.sql
