@@ -5,5 +5,13 @@
 {% endblock %}
 
 {% block content %}
-     <h1>{{title}}</h1>
+    <h1>{{title}}</h1>
+    <p>Pharetra nullam massa aenean dis eu, mi donec proin conubia netus posuere, lacinia scelerisque arcu phasellus.</p>
+    <ol>
+        {% for page in pages %}
+            <li>
+                <a href="{% url 'page' page.2 %}">{{ page.1 }}</a>
+            </li>
+        {% endfor %}
+    </ol>
 {% endblock %}

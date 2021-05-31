@@ -1,0 +1,1 @@
+tkinter tutorial project: creating the first desktop window. It is a basic operation calculator

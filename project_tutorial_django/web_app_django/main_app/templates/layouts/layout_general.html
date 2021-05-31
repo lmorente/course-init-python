@@ -26,6 +26,11 @@
                 <li>
                     <a href= "{% url 'about_us' %}">Sobre nosotros</a>
                 </li>
+                {% for page in pages %}
+                     <li>
+                         <a href="{% url 'page' page.2 %}">{{ page.1 }}</a>
+                    </li>
+                {% endfor %}
             </ul>
         </nav>
         <div class="separator">
