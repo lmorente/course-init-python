@@ -1,1 +1,1 @@
-tkinter tutorial project: creating the first desktop window. It is a basic operation calculator
+django tutorial project: Structure of a project with django and the administration menu. In the administration menu and in a view you can create new articles that are displayed on the web.

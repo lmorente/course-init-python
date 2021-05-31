@@ -1,1 +1,2 @@
-tkinter tutorial project: creating the first desktop window. It is a basic operation calculator
+
+Tkinter project: includes a menu with different views. It is a product and price application. 
