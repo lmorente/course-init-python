@@ -29,8 +29,8 @@ urlpatterns = [
     path('article', my_app.views.article, name='article'),
     path('article/edit/<int:id>', my_app.views.edit_article, name='edit_article'),
     path('articles', my_app.views.articles, name='articles'),
-    path('article/forms-create', my_app.views.create_forms_article, name="article-forms"),
-    path('article/forms-full-create', my_app.views.create_full_article, name="create_full_article"),
+    path('article/forms-create', my_app.views.create_forms_article, name='article-forms'),
+    path('article/forms-full-create', my_app.views.create_full_article, name='create_full_article'),
     path('article/save', my_app.views.save_article, name='save'),
     path('article/delete/<int:id>', my_app.views.delete_article, name='delete_article'),
 ]
