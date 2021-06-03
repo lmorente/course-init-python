@@ -1,0 +1,11 @@
+{% extends 'layouts/layout_general.html' %}
+
+{% block title %}
+    Indice
+{% endblock %}
+
+{% block content %}
+    <h1 class="title">{{title}}</h1>
+    <span class="date">{{date}}</span>
+    <p class="content">{{content|safe}}</p>
+{% endblock %}

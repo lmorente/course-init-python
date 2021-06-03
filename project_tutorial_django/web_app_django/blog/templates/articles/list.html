@@ -1,0 +1,55 @@
+{% extends 'layouts/layout_general.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+    <h1 class="title">{{title}}</h1>
+     {% for article in articles %}
+        <article class="article-item">
+            {% if article.image != null and article.image.url|length >= 12 %}
+                <div class="image">
+                    <img src="{{article.image.url}}"/>
+                </div>
+            {% endif %}
+                <div class="data">
+                    <h2>{{article.title}}</h2>
+                    <p>
+                        {% for category in article.categories.all %}
+                            <a href="{% url 'category' category.id %}">{{category}}</a>
+                            {% if forloop.counter < article.categories.all|length%}
+                                {{'-'}}
+                            {% endif %}
+                        {% endfor %}
+                    </p>
+                    <span class="date">
+                        {{article.user}}
+                        |
+                        {{article.user.email}}
+                        |
+                        {{article.categories}}
+                        | Creado:
+                        {{article.created_at}}
+                        | Actualizado:
+                        {{article.update_at}}
+                    </span>
+                    <p>
+                        {{article.content|safe}}
+                    </p>
+                </div>
+            <div class="clearfix"></div>
+        </article>
+        {%endfor%}
+        {% if articles.has_previous %}
+                <a href="?page=1">&laquo; Primero</a>
+                <a href="?page={{ articles.previous_page_number }}">Anterior</a>
+        {% endif %}
+        <span class="actual">
+            Página {{ articles.number }} de {{ articles.paginator.num_pages }}
+        </span>
+            {% if articles.has_next %}
+                <a href="?page={{ articles.next_page_number }}">Siguiente</a>
+                <a href="?page={{ articles.paginator.num_pages }}">Último &raquo;</a>
+        {% endif %}
+{% endblock %}
