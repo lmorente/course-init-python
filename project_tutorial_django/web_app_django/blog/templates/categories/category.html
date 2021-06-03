@@ -1,11 +1,12 @@
 {% extends 'layouts/layout_general.html' %}
 
 {% block title %}
-    {{title}}
+    {{category.name}}
 {% endblock %}
 
 {% block content %}
-    <h1 class="title">{{title}}</h1>
+    <h1 class="title">{{category.name}}</h1>
+    <p>{{ category.description }}</p>
      {% for article in articles %}
         <article class="article-item">
             {% if article.image != null and article.image.url|length >= 12 %}
@@ -16,7 +17,7 @@
                 <div class="data">
                     <h2>{{article.title}}</h2>
                     <p>
-                        {% for category in article.categories.all %}
+                         {% for category in article.categories.all %}
                             <a href="{% url 'category' category.id %}">{{category}}</a>
                             {% if forloop.counter < article.categories.all|length%}
                                 {{'-'}}
@@ -41,15 +42,4 @@
             <div class="clearfix"></div>
         </article>
         {%endfor%}
-        {% if articles.has_previous %}
-                <a href="?page=1">&laquo; Primero</a>
-                <a href="?page={{ articles.previous_page_number }}">Anterior</a>
-        {% endif %}
-        <span class="actual">
-            Página {{ articles.number }} de {{ articles.paginator.num_pages }}
-        </span>
-            {% if articles.has_next %}
-                <a href="?page={{ articles.next_page_number }}">Siguiente</a>
-                <a href="?page={{ articles.paginator.num_pages }}">Último &raquo;</a>
-        {% endif %}
 {% endblock %}

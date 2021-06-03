@@ -23,6 +23,17 @@
                 <li>
                    <a href= "{% url 'index' %}">Inicio</a>
                  </li>
+            {% if user.email %}
+                <li>
+                   <a href= "{% url 'articles' %}">Categorías</a>
+                    <ul>
+                        {% for category in categories %}
+                            <li>
+                                <a href="{% url 'category' category.0 %}">{{ category.1 }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
                 <li>
                     <a href= "{% url 'about_us' %}">Sobre nosotros</a>
                 </li>
@@ -31,6 +42,17 @@
                          <a href="{% url 'page' page.2 %}">{{ page.1 }}</a>
                     </li>
                 {% endfor %}
+                <li>
+                   <a href= "{% url 'logout' %}">Logout</a>
+                </li>
+            {% else %}
+                <li>
+                   <a href= "{% url 'register' %}">Registro</a>
+                 </li>
+                <li>
+                   <a href= "{% url 'login' %}">Login</a>
+                </li>
+            {% endif %}
             </ul>
         </nav>
         <div class="separator">

@@ -50,7 +50,11 @@
     transition: 300ms all;
 }
 
-.box form input, .box form textarea,
+.box form input[type="text"],
+.box form input[type="email"],
+.box form input[type="password"],
+.box form input,
+.box form textarea,
 .box from select {
     width: 100%;
     margin-bottom: 10px;
@@ -72,6 +76,7 @@ body{
     clear: both;
     float: none;
 }
+
 header{
     width: 1212px;
     height: 140px;
@@ -120,23 +125,62 @@ nav ul {
     text-decoration: none;
 }
 
-nav ul li {
+nav > ul > li {
     line-height: 40px;
     float: left;
 }
 
-nav ul li a{
+nav > ul > li > a{
     display: block;
     padding-left: 20px;
     padding-right: 20px;
     color: #d4d4d4;
 }
 
-nav ul li a:hover{
+nav > ul > li > a:hover{
     background-color: #2ba977;
     box-shadow: 0px 0px 5px #333333 inset;
     color: white;
     transition: all 300ms;
+}
+
+nav > ul > li > ul{
+    display: none;
+    position: absolute;
+    color: #eeeeee;
+    text-align: left;
+    width: 160px;
+    bow-shadow: 0px 2px 2px gray;
+}
+
+nav > ul > li:hover > ul {
+    display: block;
+    color: #eeeeee;
+    margin: 0px;
+    list-style: none;
+}
+
+nav > ul > li:hover > ul > li {
+    background: #f2f1f1;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 8px;
+    line-height: 25px;
+    font-size: 13px;
+    transition: all 300ms;
+}
+
+nav > ul > li:hover > ul > li a {
+    color: #666;
+    transition: all 300ms;
+}
+
+nav > ul > li:hover > ul > li:hover {
+    background-color: #2ba977;
+}
+
+nav > ul > li:hover > ul > li:hover a {
+    display: block;
+    color: white;
 }
 
 .separator{
@@ -174,6 +218,24 @@ nav ul li a:hover{
     margin: 0 auto;
     margin-bottom: 30px;
     margin-top: 80px;
+}
+
+.message,
+.alert-success{
+    padding: 20px;
+    background: #2ba977;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.message,
+.alert-warning{
+    padding: 20px;
+    background: #880000;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .box{
