@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+       Indice
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    <h1>Indice</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="message alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <p>Tu edad es: {{ age }}</p>
+
+    {% if age >=18 %}
+    <p>Eres mayor de edad</p>
+    {% else %}
+    <p>Eres menor de edad</p>
+    {% endif %}
+
+    <h2>Listado</h2>
+    <ul>
+        {% for element in list %}
+     {% endfor %}
+    </ul>
+    {#
+        {{data1}}
+        {{data2}}
+        {{list}}
+    #}
+
+    {# comment #}
+{% endblock %}

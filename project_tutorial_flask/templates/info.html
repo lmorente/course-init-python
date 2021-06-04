@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Información
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    <h1>Bienvenido, {{name|safe}}</h1>
+{% endblock %}
+
+
