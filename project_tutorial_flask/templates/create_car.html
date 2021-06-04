@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Crear coche
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    <h1>Crear coche</h1>
+    <form action="" method="POST">
+        <label for="model">Modelo</label>
+        <input for="text" name="brand"/>
+
+        <label for="brand">Marca</label>
+        <input for="text" name="model"/>
+
+        <label for="price">Precio</label>
+        <input for="number" name="price"/>
+
+        <label for="city">Ciudad</label>
+        <input for="text" name="city"/>
+
+        <input type="submit" value="Guardar"/>
+    </form>
+
+{% endblock %}
+

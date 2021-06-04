@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Curso en Python | Aprendiendo Flask {% endblock %}  </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <!--LOGO-->
+            <h1>Flask</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{ url_for('index') }}">Inicio</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('create') }}">Crear coche</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('info') }}">Información</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('contact') }}">Contacto</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('languages') }}">Lenguajes</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="separator">
+            <span class="left-corner"></span>
+            <span class="content-separator"></span>
+            <span class="right-corner"></span>
+        </div>
+    </header>
+
+    <div id="content">
+        <div class="box">
+            {% block content %}
+            <strong>Contenido heredado</strong>
+            {% endblock %}
+        </div>
+    </div>
+
+    <footer>Tutorial web con Flask {{ now.year }}</footer>
+</body>
+</html>
